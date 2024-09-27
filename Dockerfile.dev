@@ -1,0 +1,12 @@
+#node버전이 예전거면 최신 리액트 앱이 실행이 안된다. _ending; Unexpected token 
+FROM node:20
+
+WORKDIR /home/ssg/app
+
+COPY package.json ./
+
+RUN npm install
+
+COPY ./ ./
+
+CMD ["npm", "run", "start"]
