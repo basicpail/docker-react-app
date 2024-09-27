@@ -1,5 +1,5 @@
 #node버전이 예전거면 최신 리액트 앱이 실행이 안된다. _ending; Unexpected token 
-FROM node:20
+FROM node:18
 
 WORKDIR /home/ssg/app
 
