@@ -11,7 +11,8 @@ services:
 
 before_install:
   - echo "Start creating an image with dockerfile on Travis!"
-  - docker build -t basicpail93/docker-react-app -f Dockerfile.dev .
+  - docker build -t basicpail93/docker-react-app -f Dockerfile .
+  # - docker build -t basicpail93/docker-react-app -f Dockerfile.dev .
 
 script:
   - docker run -e CI=true basicpail93/docker-react-app npm run test -- --coverage

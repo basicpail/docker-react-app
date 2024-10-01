@@ -1,5 +1,5 @@
-FROM node:20 as builder
-WORKDIR '/home/ssg/app'
+FROM node:20-alpine as builder
+WORKDIR /home/ssg/app
 COPY package.json ./
 RUN npm install
 COPY ./ ./
