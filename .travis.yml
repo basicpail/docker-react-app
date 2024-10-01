@@ -10,7 +10,17 @@ before_install:
   - docker build -t basicpail93/docker-react-app -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true basicpail93/docker-react-app -- --coverage
+  - docker run -e CI=true basicpail93/docker-react-app npm run test -- --coverage
 
 after_success:
   - echo "build success!"
+
+# deploy:
+#   provider: elasticbeanstalk
+#   region: ap-southeast-2
+#   app: docker-react-app
+#   env: DockerReactApp-env
+#   bucket_name: elasticbeanstalk-ap-southeast-2-242201304740
+#   bucket_path: docker-react-app
+#   on:
+#     branch: main
